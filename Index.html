@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunga Ungu Bersinar</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1c1c1c;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            bottom: -200px;
+            animation: rise 5s ease-in-out infinite, shine 1.5s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .flower .petal {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #800080;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #800080;
+            opacity: 0.8;
+        }
+
+        .flower .petal:nth-child(1) { top: 0; left: 0; }
+        .flower .petal:nth-child(2) { top: 0; right: 0; }
+        .flower .petal:nth-child(3) { bottom: 0; left: 0; }
+        .flower .petal:nth-child(4) { bottom: 0; right: 0; }
+
+        .flower .center {
+            width: 40px;
+            height: 40px;
+            background-color: #8b00ff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px #8b00ff;
+        }
+
+        @keyframes rise {
+            0% { bottom: -200px; }
+            100% { bottom: 100%; }
+        }
+
+        @keyframes shine {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .message {
+            position: absolute;
+            bottom: 50px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            animation: fadeInOut 5s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flower">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+
+    <div class="message">Bunga Ungu yang Bersinar</div>
+
+</body>
+</html>
