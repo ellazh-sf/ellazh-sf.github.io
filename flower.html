@@ -1,1 +1,159 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tau ah samfir stres</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1c1c1c;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .bouquet {
+            position: absolute;
+            bottom: -300px;
+            animation: rise 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+       
+        .flower {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: shine 2s ease-in-out infinite;
+        }
+
+        .flower-1 { background-color: #ff69b4; top: 0; left: 50%; transform: translateX(-50%); }
+        .flower-2 { background-color: #ff4500; top: 120px; left: 20%; }
+        .flower-3 { background-color: #ffd700; top: 120px; left: 80%; }
+        .flower-4 { background-color: #800080; top: 240px; left: 50%; transform: translateX(-50%); }
+
+       
+        .leaf {
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            background-color: #228B22;
+            border-radius: 10px;
+            transform: rotate(45deg);
+            animation: leafMove 6s ease-in-out infinite;
+        }
+
+        .leaf-1 { top: 80px; left: 10%; transform: rotate(45deg); }
+        .leaf-2 { top: 80px; left: 90%; transform: rotate(-45deg); }
+        .leaf-3 { top: 200px; left: 10%; transform: rotate(45deg); }
+        .leaf-4 { top: 200px; left: 90%; transform: rotate(-45deg); }
+
+       
+        .stem {
+            position: absolute;
+            width: 10px;
+            height: 300px;
+            background-color: #8b4513;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+
+      
+        .ribbon {
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            background-color: #ff1493;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            bottom: 20px;
+        }
+
+       
+        .butterfly {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: butterflyMove 5s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .butterfly-1 { top: -50px; left: 40%; }
+        .butterfly-2 { top: -80px; left: 60%; }
+
+        @keyframes rise {
+            0% { bottom: -300px; }
+            100% { bottom: 100px; }
+        }
+
+        @keyframes shine {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes leafMove {
+            0% { transform: rotate(45deg); }
+            50% { transform: rotate(50deg); }
+            100% { transform: rotate(45deg); }
+        }
+
+        @keyframes butterflyMove {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(20px) scale(1.2); opacity: 1; }
+            100% { transform: translateY(0) scale(1); opacity: 0.7; }
+        }
+
+        .message {
+            position: absolute;
+            bottom: 50px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            animation: fadeInOut 5s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bouquet">
+        <div class="flower flower-1"></div>
+        <div class="flower flower-2"></div>
+        <div class="flower flower-3"></div>
+        <div class="flower flower-4"></div>
+
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+        <div class="leaf leaf-3"></div>
+        <div class="leaf leaf-4"></div>
+
+        <div class="stem"></div>
+        <div class="ribbon"></div>
+
+        <div class="butterfly butterfly-1"></div>
+        <div class="butterfly butterfly-2"></div>
+    </div>
+
+    <div class="message">Bouquet Bunga yang Bersinar</div>
+
+</body>
+</html>
+```
+
