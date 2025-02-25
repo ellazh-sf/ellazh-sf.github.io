@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Teks Mengetik</title>
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .typing-animation {
+            font-size: 2rem;
+            width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            animation: typing 5s steps(30) 1s forwards, blink 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+            100% {
+                border-color: #fff;
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 2s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div class="typing-animation">Mengetik Tau Ah</div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        // Setelah animasi selesai, menampilkan "Bunga Gagal Terus"
+        setTimeout(function() {
+            document.querySelector('.typing-animation').classList.add('fade-out');
+            setTimeout(function() {
+                document.querySelector('#message').textContent = 'Bunga Gagal Terus';
+                // Menampilkan "Samfir Nyerah" setelah "Bunga Gagal Terus"
+                setTimeout(function() {
+                    document.querySelector('#message').textContent = 'Samfir Nyerah';
+                }, 2000);
+            }, 2000);
+        }, 5000);
+    </script>
+
+</body>
+</html>
 
