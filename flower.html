@@ -1,159 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tau ah samfir stres</title>
+    <title>nyenye</title>
     <style>
         body {
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #1c1c1c;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
         }
 
-        .bouquet {
-            position: absolute;
-            bottom: -300px;
-            animation: rise 6s ease-in-out infinite;
-            z-index: 1;
+        .flowers-container {
+            position: relative;
+            animation: rise 10s ease-in-out infinite;
         }
 
-       
         .flower {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            animation: shine 2s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: shine 1.5s infinite alternate, glitter 3s infinite alternate;
         }
 
-        .flower-1 { background-color: #ff69b4; top: 0; left: 50%; transform: translateX(-50%); }
-        .flower-2 { background-color: #ff4500; top: 120px; left: 20%; }
-        .flower-3 { background-color: #ffd700; top: 120px; left: 80%; }
-        .flower-4 { background-color: #800080; top: 240px; left: 50%; transform: translateX(-50%); }
+        .flower-1 { background-color: #f0e6f7; top: 0; left: 15%; width: 70px; height: 70px; }
+        .flower-2 { background-color: #e6f7d7; top: 120px; left: 25%; width: 50px; height: 50px; }
+        .flower-3 { background-color: #d4f1f4; top: 240px; left: 35%; width: 80px; height: 80px; }
+        .flower-4 { background-color: #f7d7e6; top: 360px; left: 45%; width: 60px; height: 60px; }
+        .flower-5 { background-color: #f7f2e6; top: 480px; left: 55%; width: 75px; height: 75px; }
+        .flower-6 { background-color: #f0d4e7; top: 600px; left: 65%; width: 50px; height: 50px; }
+        .flower-7 { background-color: #d7f7d7; top: 720px; left: 75%; width: 85px; height: 85px; }
+        .flower-8 { background-color: #f2d4e7; top: 840px; left: 10%; width: 60px; height: 60px; }
+        .flower-9 { background-color: #e6d7f7; top: 960px; left: 20%; width: 55px; height: 55px; }
+        .flower-10 { background-color: #f7e6d7; top: 1080px; left: 30%; width: 90px; height: 90px; }
 
-       
-        .leaf {
-            position: absolute;
-            width: 50px;
-            height: 20px;
-            background-color: #228B22;
-            border-radius: 10px;
-            transform: rotate(45deg);
-            animation: leafMove 6s ease-in-out infinite;
-        }
-
-        .leaf-1 { top: 80px; left: 10%; transform: rotate(45deg); }
-        .leaf-2 { top: 80px; left: 90%; transform: rotate(-45deg); }
-        .leaf-3 { top: 200px; left: 10%; transform: rotate(45deg); }
-        .leaf-4 { top: 200px; left: 90%; transform: rotate(-45deg); }
-
-       
+        /* Batang Bunga */
         .stem {
             position: absolute;
             width: 10px;
-            height: 300px;
-            background-color: #8b4513;
+            background-color: #6b8e23;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 0;
+            animation: stemMove 10s ease-in-out infinite;
         }
 
-      
-        .ribbon {
-            position: absolute;
-            width: 120px;
-            height: 30px;
-            background-color: #ff1493;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            bottom: 20px;
+        .stem-1 { height: 250px; left: 15%; }
+        .stem-2 { height: 200px; left: 25%; }
+        .stem-3 { height: 300px; left: 35%; }
+        .stem-4 { height: 220px; left: 45%; }
+        .stem-5 { height: 280px; left: 55%; }
+        .stem-6 { height: 180px; left: 65%; }
+        .stem-7 { height: 260px; left: 75%; }
+        .stem-8 { height: 240px; left: 10%; }
+        .stem-9 { height: 220px; left: 20%; }
+        .stem-10 { height: 300px; left: 30%; }
+
+        /* Glitter effect */
+        @keyframes glitter {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 255, 255, 1); }
         }
 
-       
-        .butterfly {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: yellow;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            animation: butterflyMove 5s ease-in-out infinite;
-            opacity: 0.7;
-        }
-
-        .butterfly-1 { top: -50px; left: 40%; }
-        .butterfly-2 { top: -80px; left: 60%; }
-
-        @keyframes rise {
-            0% { bottom: -300px; }
-            100% { bottom: 100px; }
-        }
-
+        /* Shine effect */
         @keyframes shine {
             0% { opacity: 0.8; }
             50% { opacity: 1; }
             100% { opacity: 0.8; }
         }
 
-        @keyframes leafMove {
-            0% { transform: rotate(45deg); }
-            50% { transform: rotate(50deg); }
-            100% { transform: rotate(45deg); }
+        /* Move bunga perlahan ke atas */
+        @keyframes rise {
+            0% { bottom: -300px; }
+            100% { bottom: 80%; }
         }
 
-        @keyframes butterflyMove {
-            0% { transform: translateY(0) scale(1); opacity: 0.7; }
-            50% { transform: translateY(20px) scale(1.2); opacity: 1; }
-            100% { transform: translateY(0) scale(1); opacity: 0.7; }
+        @keyframes stemMove {
+            0% { transform: translateX(-50%) rotate(5deg); }
+            50% { transform: translateX(-50%) rotate(-5deg); }
+            100% { transform: translateX(-50%) rotate(5deg); }
         }
-
-        .message {
-            position: absolute;
-            bottom: 50px;
-            text-align: center;
-            font-size: 30px;
-            color: white;
-            animation: fadeInOut 5s ease-in-out infinite;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
     </style>
 </head>
 <body>
 
-    <div class="bouquet">
+    <div class="flowers-container">
+        <!-- Bunga 10 tangkai dengan ukuran dan posisi berbeda -->
         <div class="flower flower-1"></div>
         <div class="flower flower-2"></div>
         <div class="flower flower-3"></div>
         <div class="flower flower-4"></div>
+        <div class="flower flower-5"></div>
+        <div class="flower flower-6"></div>
+        <div class="flower flower-7"></div>
+        <div class="flower flower-8"></div>
+        <div class="flower flower-9"></div>
+        <div class="flower flower-10"></div>
 
-        <div class="leaf leaf-1"></div>
-        <div class="leaf leaf-2"></div>
-        <div class="leaf leaf-3"></div>
-        <div class="leaf leaf-4"></div>
-
-        <div class="stem"></div>
-        <div class="ribbon"></div>
-
-        <div class="butterfly butterfly-1"></div>
-        <div class="butterfly butterfly-2"></div>
+        <!-- Batang Bunga -->
+        <div class="stem stem-1"></div>
+        <div class="stem stem-2"></div>
+        <div class="stem stem-3"></div>
+        <div class="stem stem-4"></div>
+        <div class="stem stem-5"></div>
+        <div class="stem stem-6"></div>
+        <div class="stem stem-7"></div>
+        <div class="stem stem-8"></div>
+        <div class="stem stem-9"></div>
+        <div class="stem stem-10"></div>
     </div>
-
-    <div class="message">Bouquet Bunga yang Bersinar</div>
 
 </body>
 </html>
-```
+
+
+           
+            
+       
+        
+           
+             
+           
+
 
